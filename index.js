@@ -4,6 +4,8 @@ const config = require('./config');
 
 // --------------------- START SERVER --------------------- //
 
-module.exports = app.listen(config.port, function() {
+const server = app.listen(config.port, function() {
     console.log(`Express server listening on port ${server.address().port}`);
 });
+
+module.exports = server;

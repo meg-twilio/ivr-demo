@@ -6,13 +6,16 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
+// --------------------- INSTANCED MODULES --------------------- //
+
 const router = require('./src/router');
 
 const app = express();
 
 // --------------------- MIDDLEWARE --------------------- //
+
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -43,4 +46,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
